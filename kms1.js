@@ -1,4 +1,5 @@
 import AWS from "aws-sdk";
+AWS.config.region = "ap-south-1";
 
 var cloudwatchlogs = new AWS.CloudWatchLogs({ apiVersion: "2014-03-28" });
 
