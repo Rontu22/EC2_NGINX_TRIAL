@@ -1,25 +1,24 @@
-import * as AWS from "@aws-sdk/client-cloudwatch-events";
-const client = new AWS.CloudWatchEvents({ region: "REGION" });
+console.log("IN INDEX FILE : This is a test log");
+console.log("This is another line");
+import {
+  CloudWatchEventsClient,
+  ActivateEventSourceCommand,
+} from "@aws-sdk/client-cloudwatch-events";
 
-// async/await.
-try {
-  const data = await client.activateEventSource(params);
-  // process data.
-} catch (error) {
-  // error handling.
-}
+// a client can be shared by different commands.
+const client = new CloudWatchEventsClient({ region: "ap-south-1" });
 
-// Promises.
-client
-  .activateEventSource(params)
-  .then((data) => {
+const params = {
+  /** input parameters */
+};
+const command = new ActivateEventSourceCommand(params);
+client.send(command).then(
+  (data) => {
     // process data.
-  })
-  .catch((error) => {
+    console.log(data);
+  },
+  (error) => {
     // error handling.
-  });
-
-// callbacks.
-client.activateEventSource(params, (err, data) => {
-  // proccess err and data.
-});
+    console.log(error);
+  }
+);
