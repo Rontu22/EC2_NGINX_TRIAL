@@ -9,7 +9,7 @@ import {
 const client = new CloudWatchLogsClient({ region: "ap-south-1" });
 
 const logGroupName = "/var/awslogs/cloudwatch";
-const logStreamRes = await awsCloudWatchClient.send(
+const logStreamRes = await client.send(
   new DescribeLogStreamsCommand({
     descending: true,
     logGroupName,
