@@ -6,9 +6,19 @@ import {
 } from "@aws-sdk/client-cloudwatch-events";
 
 // a client can be shared by different commands.
-// const client = new CloudWatchEventsClient({ region: "ap-south-1" });
+const client = new CloudWatchEventsClient({ region: "ap-south-1" });
 
-// const params = {
-//   /** input parameters */
-// };
-// const command = new ActivateEventSourceCommand(params);
+const params = {
+  /** input parameters */
+};
+const command = new ActivateEventSourceCommand(params);
+client.send(command).then(
+  (data) => {
+    // process data.
+    console.log(data);
+  },
+  (error) => {
+    // error handling.
+    console.log(error);
+  }
+);
