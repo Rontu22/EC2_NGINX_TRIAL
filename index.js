@@ -19,6 +19,8 @@ try {
   // process data.
 } catch (error) {
   // error handling.
+  console.log("Error occured");
 } finally {
   // finally.
+  console.log("This is finally");
 }
