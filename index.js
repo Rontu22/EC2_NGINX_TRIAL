@@ -11,6 +11,8 @@ const client = new CloudWatchLogsClient({ region: "ap-south-1" });
 
 const params = {
   logGroupName: "my-log-group",
+  kmsKeyId:
+    "arn:aws:kms:ap-south-1:307208830146:key/d28c7717-a0a7-4036-8464-4805d88a7ff8",
 };
 const command = new AssociateKmsKeyCommand(params);
 try {
