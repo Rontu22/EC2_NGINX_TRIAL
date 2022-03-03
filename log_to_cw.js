@@ -82,3 +82,5 @@ async function log(message) {
   });
   await startLogQueueToCloudWatch();
 }
+
+log("Hi there");
