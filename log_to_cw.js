@@ -10,7 +10,7 @@ async function getSSMParameterByName(name) {
     });
   });
 }
-exports.getSSMParameterByName = getSSMParameterByName;
+// exports.getSSMParameterByName = getSSMParameterByName;
 function cloudWatchPutLogEvents(events, group, stream, sequenceToken) {
   return new Promise((resolve, reject) => {
     const cloudwatchlogs = new AWS.CloudWatchLogs();
@@ -26,7 +26,7 @@ function cloudWatchPutLogEvents(events, group, stream, sequenceToken) {
     });
   });
 }
-exports.cloudWatchPutLogEvents = cloudWatchPutLogEvents;
+// exports.cloudWatchPutLogEvents = cloudWatchPutLogEvents;
 function cloudWatchDescribeLogStreams(group) {
   return new Promise((resolve, reject) => {
     const cloudwatchlogs = new AWS.CloudWatchLogs();
@@ -39,4 +39,4 @@ function cloudWatchDescribeLogStreams(group) {
     });
   });
 }
-exports.cloudWatchDescribeLogStreams = cloudWatchDescribeLogStreams;
+// exports.cloudWatchDescribeLogStreams = cloudWatchDescribeLogStreams;
