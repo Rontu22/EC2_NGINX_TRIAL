@@ -1,4 +1,5 @@
 import AWS from "aws-sdk";
+import { cloudWatchPutLogEvents, cloudWatchDescribeLogStreams } from "./aws";
 
 AWS.config.region = "ap-south-1";
 async function getSSMParameterByName(name) {
